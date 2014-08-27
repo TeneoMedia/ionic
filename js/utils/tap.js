@@ -423,7 +423,7 @@ function tapTouchEnd(e) {
   if( !tapHasPointerMoved(e) ) {
     tapClick(e);
 
-    if( (/^(select|option)$/i).test(e.target.tagName) ) {
+    if( tapLastTouchTarget !== e.target | (/^(select|option)$/i).test(e.target.tagName) ) {
       e.preventDefault();
     }
   }
